@@ -35,7 +35,7 @@ class Passport:
         """
         Метод для виводу дати народження у форматі (25-09-2016)
         """
-        print(f'\tBirth date: {self.birth_date[2]}-{self.birth_date[1]}-{self.birth_date[0]}\n')
+        print(f'\t\tBirth date: {self.birth_date[2]}-{self.birth_date[1]}-{self.birth_date[0]}\n')
 
 
 class ForeignPassport(Passport):
