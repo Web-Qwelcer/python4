@@ -2,7 +2,6 @@ from random import *
 from datetime import *
 from time import *
 
-
 class Passport:
 
     def __init__(self, name, surname, patronymic, gender: str, city, birth_date) -> None:
@@ -36,8 +35,7 @@ class Passport:
         """
         Метод для виводу дати народження у форматі (25-09-2016)
         """
-        print(f'\tBirth date: {self.birth_date[2]}-{self.birth_date[1]}-{self.birth_date[0]}\n\
-            ')
+        print(f'\tBirth date: {self.birth_date[2]}-{self.birth_date[1]}-{self.birth_date[0]}\n')
 
 
 class ForeignPassport(Passport):
@@ -63,8 +61,7 @@ class ForeignPassport(Passport):
             \tSerial number: {self.__number}')
         print('Visa info:')
         for item in self.visa:
-            print('\t', list(item.keys())[
-                0], ':', f'{list(item.values())[0][2]}-{list(item.values())[0][1]}-{list(item.values())[0][0]}')
+            print('\t', list(item.keys())[0], ':', f'{list(item.values())[0][2]}-{list(item.values())[0][1]}-{list(item.values())[0][0]}')
 
     def countryVisaInfo(self):
         """
@@ -83,19 +80,16 @@ class ForeignPassport(Passport):
         for item in self.visa:
             if list(item.values())[0][0] >= today[0]:
                 if list(item.values())[0][1] > today[1]:
-                    print('\t', list(item.keys())[
-                        0], ':', f'{list(item.values())[0][2]}-{list(item.values())[0][1]}-{list(item.values())[0][0]}')
+                    print('\t', list(item.keys())[0], ':', f'{list(item.values())[0][2]}-{list(item.values())[0][1]}-{list(item.values())[0][0]}')
                 elif list(item.values())[0][1] == today[1]:
                     if list(item.values())[0][2] > today[2]:
-                        print('\t', list(item.keys())[
-                            0], ':', f'{list(item.values())[0][2]}-{list(item.values())[0][1]}-{list(item.values())[0][0]}')
+                        print('\t', list(item.keys())[0], ':', f'{list(item.values())[0][2]}-{list(item.values())[0][1]}-{list(item.values())[0][0]}')
 
 
 Bob = Passport('Bob', 'Bobich', 'Bobovich', 'm', 'London', '25.06.2016')
 print(Bob)
 Bob._print()
-# Bob._printBirthdate()
-
+Bob._printBirthdate()
 
 Bill = ForeignPassport('Bill', 'Bobich', 'Bobovich', 'm', 'London', '25.06.2016')
 Bill.set_visa('Poland', '01.09.2021')
